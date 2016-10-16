@@ -1,6 +1,9 @@
+[![Code Climate](https://codeclimate.com/github/ltran/middleman/badges/gpa.svg)](https://codeclimate.com/github/ltran/middleman)
+[![Test Coverage](https://codeclimate.com/github/ltran/middleman/badges/coverage.svg)](https://codeclimate.com/github/ltran/middleman/coverage)
+[![Issue Count](https://codeclimate.com/github/ltran/middleman/badges/issue_count.svg)](https://codeclimate.com/github/ltran/middleman)
 # middleman
 
-TODO: Write a description here
+URL Shortener written in Crystal.
 
 ## Installation
 
