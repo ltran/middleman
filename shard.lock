@@ -12,6 +12,10 @@ shards:
     github: jeromegn/kilt
     version: 0.3.3
 
+  micrate:
+    github: juanedi/micrate
+    version: 0.2.2
+
   multipart:
     github: RX14/multipart.cr
     version: 0.1.0

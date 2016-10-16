@@ -15,3 +15,5 @@ dependencies:
     github: ysbaddaden/pool
   dotenv:
     github: gdotdesign/cr-dotenv
+  micrate:
+    github: juanedi/micrate
