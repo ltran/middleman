@@ -1,0 +1,30 @@
+version: 1.0
+shards:
+  dotenv:
+    github: gdotdesign/cr-dotenv
+    commit: 68702bfa0a3c7eda9aa448c36d2d68dcecce7677
+
+  kemal:
+    github: sdogruyol/kemal
+    commit: 5d71c765544b2030e102ba523480deed8430e0aa
+
+  kilt:
+    github: jeromegn/kilt
+    version: 0.3.3
+
+  multipart:
+    github: RX14/multipart.cr
+    version: 0.1.0
+
+  pg:
+    github: will/crystal-pg
+    version: 0.11.0
+
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
+
+  radix:
+    github: luislavena/radix
+    version: 0.3.1
+
