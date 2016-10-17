@@ -10,9 +10,13 @@ pg = ConnectionPool.new(capacity: 25, timeout: 0.01) do
   PG.connect(ENV["PG_URL"])
 end
 
+before_all do |env|
+  env.response.content_type = "application/json"
+end
+
 # Matches GET "http://host:port/"
 get "/urls" do |env|
-  env.response.content_type = "application/json"
+  #env.response.content_type = "application/json"
   result =
     pg.connection do |conn|
       conn.exec({Int64, String, String}, "SELECT * from urls limit 100")
@@ -50,7 +54,6 @@ post "/urls" do |env|
 end
 
 get "/:lookup" do |env|
-  env.response.content_type = "application/json"
   lookup = env.params.url["lookup"].as String
 
   begin
@@ -59,9 +62,7 @@ get "/:lookup" do |env|
         conn.exec({Int64, String, String}, "SELECT * from urls WHERE lookup = '#{lookup}' limit 1;")
       end
 
-    {
-      data: result.to_hash.first
-    }.to_json
+    env.redirect result.to_hash.first["destination_url"].to_s
   rescue
     env.response.status_code = 403
 
@@ -72,11 +73,5 @@ get "/:lookup" do |env|
     }.to_json
   end
 end
-
-# Creates a WebSocket handler.
-# Matches "ws://host:port/socket"
-#ws "/socket" do |socket|
-#socket.send "Hello from Kemal!"
-#end
 
 Kemal.run
