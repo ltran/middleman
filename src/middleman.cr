@@ -2,6 +2,7 @@ require "kemal"
 require "pg"
 require "pool/connection"
 require "dotenv"
+require "./middleman/lookup"
 
 # Load deafult ".env" file
 Dotenv.load
@@ -16,7 +17,6 @@ end
 
 # Matches GET "http://host:port/"
 get "/urls" do |env|
-  #env.response.content_type = "application/json"
   result =
     pg.connection do |conn|
       conn.exec({Int64, String, String}, "SELECT * from urls limit 100")
@@ -27,21 +27,25 @@ get "/urls" do |env|
   }.to_json
 end
 
-def generate_lookup
-  Time.now
-end
-
 post "/urls" do |env|
   url = env.params.json["url"].as String
-  lookup = generate_lookup
-  begin
-  result = pg.connection do |conn|
-    conn.exec({Int64, String, String}, "INSERT INTO urls (destination_url, lookup) VALUES ('#{url}', '#{lookup}') RETURNING *;")
+
+  lookup = ""
+  loop do
+    lookup = Lookup.generate(lookup)
+    result = pg.connection do |conn|
+      conn.exec({Int64}, "SELECT COUNT(*) FROM urls WHERE lookup = '#{lookup}';")
+    end
+
+    break if result.to_hash.first["count"] <= 0
   end
 
-  {
-    data: result.to_hash.first
-  }.to_json
+  begin
+    result = pg.connection do |conn|
+      conn.exec({Int64, String, String}, "INSERT INTO urls (destination_url, lookup) VALUES ('#{url}', '#{lookup}') RETURNING *;")
+    end
+
+    { data: result.to_hash.first }.to_json
 
   rescue e
     env.response.status_code = 403

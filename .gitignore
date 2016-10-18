@@ -4,4 +4,4 @@
 /.crystal/
 /.shards/
 .env
-
+__vim-crystal-temporary*
