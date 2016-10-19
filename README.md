@@ -44,7 +44,7 @@ crystal ./src/middleman.cr
 
 Compiling
 ```bash
-crystal build ./src/middleman.cr
+crystal build ./src/middleman.cr --release
 crystal build -d ./src/middleman.cr  # debug mode
 ```
 
