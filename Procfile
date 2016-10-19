@@ -1,1 +1,1 @@
-web: ./middleman -p $PORT
+web: crystal ./src/middleman.cr -p $PORT
