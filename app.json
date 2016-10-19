@@ -2,7 +2,11 @@
   "name": "Middleman",
   "description": "URL Shortener.",
   "scripts": { },
-  "env": { },
+  "env": {
+    "KEMAL_ENV": {
+      "required": true
+    }
+  },
   "formation": {
     "web": {
       "quantity": 1,
