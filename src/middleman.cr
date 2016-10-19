@@ -4,5 +4,5 @@ require "kemal"
 require "./middleman/version"
 require "./middleman/server"
 
-module Middlema 
+module Middlema
 end
