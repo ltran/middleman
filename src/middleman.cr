@@ -1,5 +1,5 @@
-require "dotenv"
-require "kemal"
+require "../libs/dotenv"
+require "../libs/kemal"
 require "./middleman/version"
 require "./middleman/server"
 
