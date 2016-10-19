@@ -1,10 +1,8 @@
 {
   "name": "Middleman",
-  "description": "",
-  "scripts": {
-  },
-  "env": {
-  },
+  "description": "URL Shortener.",
+  "scripts": { },
+  "env": { },
   "formation": {
     "web": {
       "quantity": 1,
@@ -12,9 +10,11 @@
     }
   },
   "addons": [
-    "plan": "heroku-postgresql:hobby-dev",
-    "options": {
-      "version": "9.6"
+    {
+      "plan": "heroku-postgresql:hobby-dev",
+      "options": {
+        "version": "9.6"
+      }
     }
   ],
   "keywords": ["crystal", "ruby"],
