@@ -17,9 +17,10 @@
       "version": "9.6"
     }
   ],
+  "keywords": ["crystal", "ruby"],
   "buildpacks": [
     {
-      "url": "https://github.com/crystal-lang/heroku-buildpack-crystal"
+      "url": "https://github.com/zamith/heroku-buildpack-crystal"
     }
   ]
 }
