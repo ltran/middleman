@@ -1,1 +1,1 @@
-web: ./middleman
+web: ./middleman -p $PORT
