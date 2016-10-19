@@ -2,7 +2,7 @@
   "name": "Middleman",
   "description": "",
   "scripts": {
-    "postdeploy": "crystal build src/middleman.cr --release"
+    "postdeploy": "crystal build ./src/middleman.cr --release"
   },
   "env": {
   },

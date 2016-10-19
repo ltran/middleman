@@ -8,7 +8,7 @@ require "./middleman/lookup"
 Dotenv.load
 
 pg = ConnectionPool.new(capacity: 25, timeout: 0.01) do
-  PG.connect(ENV["PG_URL"])
+  PG.connect(ENV["DATABASE_URL"])
 end
 
 before_all do |env|
