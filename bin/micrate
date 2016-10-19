@@ -1,4 +1,3 @@
-#! /usr/bin/env crystal
 require "dotenv"
 
 # Load deafult ".env" file
