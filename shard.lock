@@ -6,7 +6,7 @@ shards:
 
   kemal:
     github: sdogruyol/kemal
-    commit: 5d71c765544b2030e102ba523480deed8430e0aa
+    commit: e43b2a3a01764ddd99c25f694a610d295866a9c9
 
   kilt:
     github: jeromegn/kilt

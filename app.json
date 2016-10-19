@@ -1,9 +1,11 @@
 {
   "name": "Middleman",
-  "description": "",
-  "scripts": {
-  },
+  "description": "URL Shortener.",
+  "scripts": { },
   "env": {
+    "KEMAL_ENV": {
+      "required": true
+    }
   },
   "formation": {
     "web": {
@@ -12,9 +14,11 @@
     }
   },
   "addons": [
-    "plan": "heroku-postgresql:hobby-dev",
-    "options": {
-      "version": "9.6"
+    {
+      "plan": "heroku-postgresql:hobby-dev",
+      "options": {
+        "version": "9.6"
+      }
     }
   ],
   "keywords": ["crystal", "ruby"],
