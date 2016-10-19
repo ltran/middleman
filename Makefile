@@ -1,3 +1,3 @@
 build:
-	crystal build src/middleman.cr -o ./middleman --release
+	crystal build src/middleman.cr --release
 
