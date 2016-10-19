@@ -2,7 +2,6 @@
   "name": "Middleman",
   "description": "",
   "scripts": {
-    "postdeploy": "crystal build ./src/middleman.cr --release"
   },
   "env": {
   },
@@ -20,7 +19,7 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/crystal-lang/heroku-buildpack-crystal.git"
+      "url": "https://github.com/crystal-lang/heroku-buildpack-crystal"
     }
   ]
 }
